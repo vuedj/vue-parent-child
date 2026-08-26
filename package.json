@@ -9,21 +9,21 @@
         "preview": "vite preview",
         "lint": "eslint --fix 'src/**/*.{js,ts,jsx,tsx,vue}'",
         "prettier": "npx prettier . --write",
-        "format": "npm run lint && npm run prettier"
+        "format": "pnpm lint && pnpm prettier"
     },
     "dependencies": {
-        "axios": "^1.7.7",
-        "vue": "^3.5.12",
-        "vue-router": "^4.4.5"
+        "axios": "^1.19.0",
+        "vue": "^3.5.41",
+        "vue-router": "^5.2.0"
     },
     "devDependencies": {
-        "@eslint/js": "^9.13.0",
-        "@vitejs/plugin-vue": "^5.1.4",
-        "eslint": "^9.13.0",
-        "eslint-config-prettier": "^9.1.0",
+        "@eslint/js": "^10.0.1",
+        "@vitejs/plugin-vue": "^6.0.8",
+        "eslint": "^10.9.0",
+        "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier-vue": "^5.0.0",
-        "eslint-plugin-vue": "^9.29.1",
-        "prettier": "^3.3.3",
-        "vite": "^5.4.10"
+        "eslint-plugin-vue": "^10.10.0",
+        "prettier": "^3.9.6",
+        "vite": "^8.2.2"
     }
 }

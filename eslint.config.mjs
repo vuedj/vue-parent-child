@@ -1,22 +1,12 @@
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
-import { FlatCompat } from '@eslint/eslintrc'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all,
-})
+import pluginVue from 'eslint-plugin-vue'
+import prettier from 'eslint-config-prettier'
 
 export default [
-    ...compat.extends(
-        'plugin:vue/vue3-recommended',
-        'plugin:vue/vue3-strongly-recommended',
-        'prettier',
-    ),
+    js.configs.recommended,
+    ...pluginVue.configs['flat/recommended'],
+    ...pluginVue.configs['flat/strongly-recommended'],
+    prettier,
     {
         rules: {},
     },

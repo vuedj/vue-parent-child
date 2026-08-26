@@ -3,5 +3,6 @@
     "tabWidth": 4,
     "endOfLine": "lf",
     "singleQuote": true,
-    "singleAttributePerLine": true
+    "singleAttributePerLine": true,
+    "htmlWhitespaceSensitivity": "ignore"
 }
