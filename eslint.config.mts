@@ -1,10 +1,10 @@
-import js from '@eslint/js'
-import pluginVue from 'eslint-plugin-vue'
-import prettier from 'eslint-config-prettier'
+import tseslint from 'typescript-eslint'
 import tsParser from '@typescript-eslint/parser'
+import prettier from 'eslint-config-prettier'
+import pluginVue from 'eslint-plugin-vue'
 
 export default [
-    js.configs.recommended,
+    ...tseslint.configs.recommended,
     ...pluginVue.configs['flat/recommended'],
     ...pluginVue.configs['flat/strongly-recommended'],
     {
@@ -25,6 +25,9 @@ export default [
         },
         rules: {
             'no-undef': 'off',
+            'vue/multi-word-component-names': 'off',
+            'vue/html-indent': ['error', 2],
+            'vue/script-indent': ['error', 2, { baseIndent: 1 }],
         },
     },
     prettier,
