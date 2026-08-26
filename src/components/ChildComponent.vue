@@ -24,8 +24,8 @@ const handleClose = () => {
 <template>
     <h1>{{ msg }}</h1>
     <input
-        type="text"
         v-model.lazy="nameInput"
+        type="text"
         placeholder="Enter Name..."
     />
     <button @click="handleClose">Click me</button>
