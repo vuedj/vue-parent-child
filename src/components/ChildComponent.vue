@@ -16,7 +16,7 @@ const handleSubmit = (e) => {
     emit('emit-from-child', {
         id: 1,
         age: 46,
-        name: nameInput,
+        name: nameInput.value,
     })
 
     e.target.reset()
