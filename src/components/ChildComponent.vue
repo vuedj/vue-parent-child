@@ -19,9 +19,11 @@ const handleSubmit = (e: Event) => {
         const processed: UserData = {
             id: 1,
             age: 46,
-            name:
-                trimmedNameInput.charAt(0).toUpperCase() +
-                trimmedNameInput.slice(1).toLowerCase(),
+            name: trimmedNameInput
+                .toLowerCase()
+                .split(' ')
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' '),
         }
 
         emit('emit-from-child', processed)
