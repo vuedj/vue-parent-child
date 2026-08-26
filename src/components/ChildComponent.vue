@@ -12,23 +12,27 @@ defineProps({
 
 const emit = defineEmits(['emit-from-child'])
 
-const handleClose = () => {
+const handleSubmit = (e) => {
     emit('emit-from-child', {
         id: 1,
         age: 46,
         name: nameInput,
     })
+
+    e.target.reset()
 }
 </script>
 
 <template>
     <h1>{{ msg }}</h1>
-    <input
-        v-model.lazy="nameInput"
-        type="text"
-        placeholder="Enter Name..."
-    />
-    <button @click="handleClose">Click me</button>
+    <form @submit.prevent="handleSubmit">
+        <input
+            v-model.lazy="nameInput"
+            type="text"
+            placeholder="Enter Name..."
+        />
+        <button type="submit">Click me</button>
+    </form>
 </template>
 
 <style scoped>
