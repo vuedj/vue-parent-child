@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const nameInput = ref('')
 
-interface UserData {
+type UserData = {
     id: number
     age: number
     name: string
