@@ -1,18 +1,23 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const nameInput = ref('')
 
-defineProps({
-    msg: {
-        type: String,
-        required: true,
-    },
-})
+interface UserData {
+    id: number
+    age: number
+    name: string
+}
 
-const emit = defineEmits(['emit-from-child'])
+defineProps<{
+    msg: string
+}>()
 
-const handleSubmit = (e) => {
+const emit = defineEmits<{
+    'emit-from-child': [data: UserData]
+}>()
+
+const handleSubmit = (e: Event) => {
     if (nameInput.value) {
         emit('emit-from-child', {
             id: 1,
@@ -20,7 +25,7 @@ const handleSubmit = (e) => {
             name: nameInput.value,
         })
 
-        e.target.reset()
+        ;(e.target as HTMLFormElement).reset()
     }
 }
 </script>

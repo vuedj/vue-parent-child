@@ -1,0 +1,29 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
+    "compilerOptions": {
+        "strict": true,
+
+        "target": "esnext",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+        "types": ["vite/client"],
+        "libReplacement": true,
+        "noEmit": true,
+
+        /* Linting */
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "erasableSyntaxOnly": true,
+        "noUnusedLocals": true,
+        "noImplicitOverride": true,
+        "noUnusedParameters": true,
+        "noUncheckedIndexedAccess": true,
+        "noFallthroughCasesInSwitch": true,
+        "exactOptionalPropertyTypes": true,
+        "noPropertyAccessFromIndexSignature": true
+    },
+    "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.vue"]
+}
