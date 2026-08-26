@@ -14,11 +14,17 @@ const emit = defineEmits<{
 
 const handleSubmit = (e: Event) => {
     if (nameInput.value) {
-        emit('emit-from-child', {
+        const trimmedNameInput = nameInput.value.trim()
+
+        const processed: UserData = {
             id: 1,
             age: 46,
-            name: nameInput.value,
-        })
+            name:
+                trimmedNameInput.charAt(0).toUpperCase() +
+                trimmedNameInput.slice(1).toLowerCase(),
+        }
+
+        emit('emit-from-child', processed)
 
         const form = e.target as HTMLFormElement
         form.reset()
