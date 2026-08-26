@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import ChildComponent from '@/components/ChildComponent.vue'
+import type { UserData } from '@/types'
 import { ref } from 'vue'
-
-interface UserData {
-    id: number
-    age: number
-    name: string
-}
 
 const msg = 'From Child Component:'
 const eventData = ref<UserData | null>(null)

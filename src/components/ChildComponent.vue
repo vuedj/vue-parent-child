@@ -1,13 +1,8 @@
 <script setup lang="ts">
+import type { UserData } from '@/types'
 import { ref } from 'vue'
 
 const nameInput = ref('')
-
-type UserData = {
-    id: number
-    age: number
-    name: string
-}
 
 defineProps<{
     msg: string
