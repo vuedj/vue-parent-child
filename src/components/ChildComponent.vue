@@ -25,7 +25,8 @@ const handleSubmit = (e: Event) => {
             name: nameInput.value,
         })
 
-        ;(e.target as HTMLFormElement).reset()
+        const form = e.target as HTMLFormElement
+        form.reset()
     }
 }
 </script>
