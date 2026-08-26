@@ -13,13 +13,15 @@ defineProps({
 const emit = defineEmits(['emit-from-child'])
 
 const handleSubmit = (e) => {
-    emit('emit-from-child', {
-        id: 1,
-        age: 46,
-        name: nameInput.value,
-    })
+    if (nameInput.value) {
+        emit('emit-from-child', {
+            id: 1,
+            age: 46,
+            name: nameInput.value,
+        })
 
-    e.target.reset()
+        e.target.reset()
+    }
 }
 </script>
 
