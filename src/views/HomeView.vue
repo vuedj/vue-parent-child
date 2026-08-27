@@ -3,7 +3,7 @@ import ChildComponent from '@/components/ChildComponent.vue'
 import type { UserData } from '@/types'
 import { ref } from 'vue'
 
-const msg = 'From Child Component:'
+const msg = 'From Parent Component:'
 const eventData = ref<UserData | null>(null)
 
 const parentFunc = (data: UserData) => {
@@ -12,10 +12,12 @@ const parentFunc = (data: UserData) => {
 </script>
 
 <template>
-    <div>
+    <div class="parent">
         <h1>Home</h1>
 
-        {{ eventData }}
+        <div class="show-data">
+            {{ eventData }}
+        </div>
 
         <ChildComponent
             :msg="msg"
@@ -24,4 +26,12 @@ const parentFunc = (data: UserData) => {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.parent {
+    outline: 1px solid tomato;
+    padding: 1rem;
+}
+.show-data {
+    min-height: 40px;
+}
+</style>

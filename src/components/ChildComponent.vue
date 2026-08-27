@@ -35,19 +35,33 @@ const handleSubmit = (e: Event) => {
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
-    <form @submit.prevent="handleSubmit">
-        <input
-            v-model.lazy="nameInput"
-            type="text"
-            placeholder="Enter Name..."
-        />
-        <button type="submit">Click me</button>
-    </form>
+    <div class="child">
+        <h1>{{ msg }}</h1>
+        <form @submit.prevent="handleSubmit">
+            <input
+                v-model.lazy="nameInput"
+                type="text"
+                placeholder="Enter Name..."
+            />
+            <button type="submit">Click me</button>
+        </form>
+    </div>
 </template>
 
 <style scoped>
-h1 {
-    margin-top: 2rem;
+form {
+    display: flex;
+    max-width: 20rem;
+    justify-content: space-between;
+}
+
+form input,
+button {
+    padding: 0.2rem;
+}
+
+.child {
+    outline: 1px solid darkcyan;
+    padding: 1rem;
 }
 </style>
