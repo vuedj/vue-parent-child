@@ -36,7 +36,7 @@ const handleSubmit = (e: Event) => {
 
 <template>
     <div class="child">
-        <h1>{{ msg }}</h1>
+        <h2>{{ msg }}</h2>
         <form @submit.prevent="handleSubmit">
             <input
                 v-model.lazy="nameInput"
@@ -63,5 +63,9 @@ button {
 .child {
     outline: 1px solid darkcyan;
     padding: 1rem;
+}
+
+h2 {
+    margin-block-end: 0.5rem;
 }
 </style>

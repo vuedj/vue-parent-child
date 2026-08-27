@@ -3,7 +3,7 @@ import ChildComponent from '@/components/ChildComponent.vue'
 import type { UserData } from '@/types'
 import { ref } from 'vue'
 
-const msg = 'From Parent Component:'
+const msg = 'Defined in Parent component - rendered in Child component'
 const eventData = ref<UserData | null>(null)
 
 const parentFunc = (data: UserData) => {
