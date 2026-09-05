@@ -3,3 +3,8 @@ export type UserData = {
     age: number
     name: string
 }
+
+export type ProductData = {
+    id: number
+    sku: string
+}

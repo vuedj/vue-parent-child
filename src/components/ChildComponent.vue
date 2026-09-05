@@ -1,18 +1,24 @@
 <script setup lang="ts">
-import type { UserData } from '@/types'
+import type { ProductData, UserData } from '@/types'
 import { ref } from 'vue'
 
-const nameInput = ref('')
+const nameInput = ref<string>('')
+let dummyData: ProductData
 
 defineProps<{
     msg: string
 }>()
 
 const emit = defineEmits<{
-    'emit-from-child': [data: UserData]
+    'emit-from-child': [u: UserData, p: ProductData]
 }>()
 
 const handleSubmit = (e: Event) => {
+    dummyData = {
+        id: 2,
+        sku: 'product-1-sku',
+    }
+
     if (nameInput.value) {
         const trimmedNameInput = nameInput.value.trim()
 
@@ -26,7 +32,7 @@ const handleSubmit = (e: Event) => {
                 .join(' '),
         }
 
-        emit('emit-from-child', processed)
+        emit('emit-from-child', processed, dummyData)
 
         const form = e.target as HTMLFormElement
         form.reset()

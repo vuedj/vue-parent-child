@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import ChildComponent from '@/components/ChildComponent.vue'
-import type { UserData } from '@/types'
+import type { ProductData, UserData } from '@/types'
 import { ref } from 'vue'
 
 const msg = 'Defined in Parent component - rendered in Child component'
-const eventData = ref<UserData | null>(null)
 
-const parentFunc = (data: UserData) => {
-    eventData.value = data
+const userData = ref<UserData | null>(null)
+const productData = ref<ProductData | null>(null)
+
+const parentFunc = (u: UserData, p: ProductData) => {
+    userData.value = u
+    productData.value = p
 }
 </script>
 
@@ -16,7 +19,12 @@ const parentFunc = (data: UserData) => {
         <h1>Home</h1>
 
         <div class="show-data">
-            {{ eventData }}
+            <div>
+                {{ userData }}
+            </div>
+            <div>
+                {{ productData }}
+            </div>
         </div>
 
         <ChildComponent
@@ -32,6 +40,11 @@ const parentFunc = (data: UserData) => {
     padding: 1rem;
 }
 .show-data {
-    min-height: 40px;
+    min-height: 5rem;
+    padding-inline: 4rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 </style>
